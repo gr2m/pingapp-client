@@ -1,0 +1,28 @@
+/**
+ * Main One
+ * --------------------------------------------------
+ *
+ * @Authors: 'Kene Udeze (@udezekene)
+ * @Created: September 16, 2013
+ */
+/* ==========================================================================
+   Site Design
+   ========================================================================== */
+body {
+  background: #063559;
+  font-size: 25px;
+  color: #fefefe;
+  font-weight: 300;
+}
+body a {
+  text-decoration: none;
+  color: #36A7CF;
+  font-weight: bold;
+}
+body a:hover {
+  color: #36A7CF;
+  text-decoration: none;
+}
+body > section {
+  margin-top: 25%;
+}
