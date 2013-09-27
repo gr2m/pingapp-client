@@ -8606,6 +8606,16 @@ a [class*=" icon-"] {
 /*
    Front-End Design
    ========================================================================== */
+.app,
+.login {
+  display: none;
+}
+html[data-mode="app"] .app {
+  display: block;
+}
+html[data-mode="login"] .login {
+  display: block;
+}
 body {
   background: #FFF;
   font-family: 'Open Sans', sans-serif;

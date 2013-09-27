@@ -8,12 +8,17 @@
 
   function PingApi(baseUrl) {
     baseUrl || (baseUrl = 'http://pingapp.apiary.io');
-    sessionId = localStorage.getItem('sessionId')
+    var sessionId = localStorage.getItem('sessionId')
+    var accountName = localStorage.getItem('name')
+    var accountEmail = localStorage.getItem('email')
 
     var api = {
       account: {
         signIn: signIn,
         signOut: signOut,
+        isSignedIn: isSignedIn,
+        name: getAccountName,
+        email: getAccountEmail,
       },
       contacts: {
         findAll: findAllContacts,
@@ -37,10 +42,6 @@
           "X-Session-Id": sessionId
         }
       }
-      if (data) {
-        options.contentType = 'application/json';
-        options.data = data;
-      }
       return $.ajax(options)
     }
 
@@ -50,6 +51,9 @@
 
     function unsetSessionId( session ) {
       sessionId = undefined;
+      localStorage.removeItem('sessionId')
+      localStorage.removeItem('name')
+      localStorage.removeItem('email')
     }
 
     // Accounts
@@ -57,10 +61,37 @@
       return request('POST', '/session', {
         email: email,
         password: password
-      }).then( setSessionId )
+      })
+      .done( setSessionId )
+      .then( function(response) {
+        // fake it until you make it
+        response.account.name = email;
+        response.account.email = email;
+        accountName = email
+        accountEmail = email
+        localStorage.setItem('sessionId', sessionId)
+        localStorage.setItem('name', name)
+        localStorage.setItem('email', email)
+
+        return response
+      })
+      .then( function(response) {
+        return response.account
+      })
+
     }
     function signOut() {
       return request('DELETE', '/session').then( unsetSessionId )
+    }
+    function isSignedIn() {
+      return !!sessionId;
+    }
+
+    function getAccountName() {
+      return accountName;
+    }
+    function getAccountEmail() {
+      return accountEmail;
     }
 
     // Contacts
