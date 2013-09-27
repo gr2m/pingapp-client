@@ -4,16 +4,296 @@
     <title>PingApp Client</title>
 
     <!-- build:css(.tmp) /styles/all.css -->
-    <link rel="stylesheet" type="text/css" href="/styles/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="/styles/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="/styles/app.css" />
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="styles/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="styles/app.css" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
     <!-- endbuild -->
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <header>
+
+      <div class="container">
+        <div class="">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="logo">
+              <a href="#"><img src="images/logo.png" alt=""></a>  
+            </div>
+          </div>
+          <div class="navbar-collapse collapse">
+            
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href=""><i class="icon-home"></i>Home</a></li>
+              <li><a href=""><i class="icon-user"></i>Contacts</a></li>
+              <li><a href=""><i class="icon-envelope"></i>Messages</a></li>
+              <li><a href=""><i class="icon-cog"></i>Settings</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Username <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Edit Profile</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+              
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+      <!-- End of Container -->
+      <div class="header-title">
+        <div class="container">
+          <div class="row">
+
+            <h2>Dashboard</h2>
+            <nav class="pull-right">
+              <ul>
+                <li class="btn"><a href="#"><i class="icon-envelope"></i>Send a message</a></li>
+                <li class="btn"><a href="#"><i class="icon-plus-sign"></i>Add a contact</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- End of container -->
+      </div>
+    </header>
+    
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <div class="module">
+              <div class="title">
+                <h3>Title of the module</h3>
+              </div>
+              <div class="content">
+                <ul class="user-listing">
+
+                  <li class="user">
+                    <div>
+                     <div class="avatar initials">
+                       <abbr>KU</abbr>
+                     </div>
+                     <h4><a href="">Udeze Kene</a></h4> 
+                     <div class="last-update">
+                       <p><span class="source"><i class="icon-twitter"></i></span> Packing my bags for the Nairobi trip...</p>
+                     </div>
+                     <div class="status">
+                       <ul>
+                         <li class="response good"><i class="icon-circle"></i></li>
+                         <li class="verified"><a href=""><i class="icon-thumbs-up"></i></a></li>
+                       </ul>
+                     </div>
+                     <div class="meta">
+                        <span class="time-past">1hr ago</span>
+                     </div>
+                    </div>
+                  </li>
+
+                  <li class="group">
+                    <div>
+                     <h4><a href="">25-02-2013</a></h4> 
+                     <div class="photo-pile">
+                       <ul>
+                         <li class="avatar image"><img src="http://dummyimage.com/50x50/000/fff" alt=""><span class="good">.</span></li>
+                         <li class="avatar initials"><abbr>KU</abbr><span class="good">.</span></li>
+                         <li class="avatar initials"><abbr>KU</abbr><span class="bad">.</span></li>
+                         <li class="avatar initials"><abbr>KU</abbr><span class="bad">.</span></li>
+                         <li class="avatar initials"><abbr>KU</abbr><span class="none">.</span></li>
+                         <li class="avatar initials"><abbr>KU</abbr><span class="bad">.</span></li>
+                       </ul>
+                     </div>
+                     <div class="meta">
+                        <span class="time-past">1hr ago</span>
+                     </div>
+                    </div>
+                  </li>
+
+                  <li class="user">
+                    <div>
+                     <div class="avatar initials">
+                       <abbr>KU</abbr>
+                     </div>
+                     <h4><a href="">Udeze Kene</a></h4> 
+                     <div class="last-update">
+                       <p><span class="source"><i class="icon-twitter"></i></span> Packing my bags for the Nairobi trip...</p>
+                     </div>
+                     <div class="status">
+                       <ul>
+                         <li class="response good"><i class="icon-circle"></i></li>
+                         <li class="verified"><a href=""><i class="icon-thumbs-up"></i></a></li>
+                       </ul>
+                     </div>
+                     <div class="meta">
+                        <span class="time-past">1hr ago</span>
+                     </div>
+                    </div>
+                  </li>
+
+                  <li class="group">
+                    <div>
+                     <h4><a href="">25-02-2013</a></h4> 
+                     <div class="photo-pile">
+                       <ul>
+                         <li class="avatar image"><img src="http://dummyimage.com/50x50/000/fff" alt=""><span class="good">.</span></li>
+                         <li class="avatar initials"><abbr>KU</abbr><span class="good">.</span></li>
+                         <li class="avatar initials"><abbr>KU</abbr><span class="bad">.</span></li>
+                         <li class="avatar initials"><abbr>KU</abbr><span class="bad">.</span></li>
+                         <li class="avatar initials"><abbr>KU</abbr><span class="none">.</span></li>
+                         <li class="avatar initials"><abbr>KU</abbr><span class="bad">.</span></li>
+                       </ul>
+                     </div>
+                     <div class="meta">
+                        <span class="time-past">1hr ago</span>
+                     </div>
+                    </div>
+                  </li>
+
+
+                  <li class="user">
+                    <div>
+                     <div class="avatar initials">
+                       <abbr>KU</abbr>
+                     </div>
+                     <h4><a href="">Udeze Kene</a></h4> 
+                     <div class="last-update">
+                       <p><span class="source"><i class="icon-twitter"></i></span> Packing my bags for the Nairobi trip...</p>
+                     </div>
+                     <div class="status">
+                       <ul>
+                         <li class="response good"><i class="icon-circle"></i></li>
+                         <li class="verified"><a href=""><i class="icon-thumbs-up"></i></a></li>
+                       </ul>
+                     </div>
+                     <div class="meta">
+                        <span class="time-past">1hr ago</span>
+                     </div>
+                    </div>
+                  </li>
+
+                  <li class="group">
+                    <div>
+                     <h4><a href="">25-02-2013</a></h4> 
+                     <div class="photo-pile">
+                       <ul>
+                         <li class="avatar image"><img src="http://dummyimage.com/50x50/000/fff" alt=""><span class="good">.</span></li>
+                         <li class="avatar initials"><abbr>KU</abbr><span class="good">.</span></li>
+                         <li class="avatar initials"><abbr>KU</abbr><span class="bad">.</span></li>
+                         <li class="avatar initials"><abbr>KU</abbr><span class="bad">.</span></li>
+                         <li class="avatar initials"><abbr>KU</abbr><span class="none">.</span></li>
+                         <li class="avatar initials"><abbr>KU</abbr><span class="bad">.</span></li>
+                       </ul>
+                     </div>
+                     <div class="meta">
+                        <span class="time-past">1hr ago</span>
+                     </div>
+                    </div>
+                  </li>
+
+
+                  <li class="user">
+                    <div>
+                     <div class="avatar initials">
+                       <abbr>KU</abbr>
+                     </div>
+                     <h4><a href="">Udeze Kene</a></h4> 
+                     <div class="last-update">
+                       <p><span class="source"><i class="icon-twitter"></i></span> Packing my bags for the Nairobi trip...</p>
+                     </div>
+                     <div class="status">
+                       <ul>
+                         <li class="response good"><i class="icon-circle"></i></li>
+                         <li class="verified"><a href=""><i class="icon-thumbs-up"></i></a></li>
+                       </ul>
+                     </div>
+                     <div class="meta">
+                        <span class="time-past">1hr ago</span>
+                     </div>
+                    </div>
+                  </li>
+
+                  <li class="group">
+                    <div>
+                     <h4><a href="">25-02-2013</a></h4> 
+                     <div class="photo-pile">
+                       <ul>
+                         <li class="avatar image"><img src="http://dummyimage.com/50x50/000/fff" alt=""><span class="good">.</span></li>
+                         <li class="avatar initials"><abbr>KU</abbr><span class="good">.</span></li>
+                         <li class="avatar initials"><abbr>KU</abbr><span class="bad">.</span></li>
+                         <li class="avatar initials"><abbr>KU</abbr><span class="bad">.</span></li>
+                         <li class="avatar initials"><abbr>KU</abbr><span class="none">.</span></li>
+                         <li class="avatar initials"><abbr>KU</abbr><span class="bad">.</span></li>
+                       </ul>
+                     </div>
+                     <div class="meta">
+                        <span class="time-past">1hr ago</span>
+                     </div>
+                    </div>
+                  </li>
+
+
+                  <li class="user">
+                    <div>
+                     <div class="avatar initials">
+                       <abbr>KU</abbr>
+                     </div>
+                     <h4><a href="">Udeze Kene</a></h4> 
+                     <div class="last-update">
+                       <p><span class="source"><i class="icon-twitter"></i></span> Packing my bags for the Nairobi trip...</p>
+                     </div>
+                     <div class="status">
+                       <ul>
+                         <li class="response good"><i class="icon-circle"></i></li>
+                         <li class="verified"><a href=""><i class="icon-thumbs-up"></i></a></li>
+                       </ul>
+                     </div>
+                     <div class="meta">
+                        <span class="time-past">1hr ago</span>
+                     </div>
+                    </div>
+                  </li>
+
+                  <li class="group">
+                    <div>
+                     <h4><a href="">25-02-2013</a></h4> 
+                     <div class="photo-pile">
+                       <ul>
+                         <li class="avatar image"><img src="http://dummyimage.com/50x50/000/fff" alt=""><span class="good">.</span></li>
+                         <li class="avatar initials"><abbr>KU</abbr><span class="good">.</span></li>
+                         <li class="avatar initials"><abbr>KU</abbr><span class="bad">.</span></li>
+                         <li class="avatar initials"><abbr>KU</abbr><span class="bad">.</span></li>
+                         <li class="avatar initials"><abbr>KU</abbr><span class="none">.</span></li>
+                         <li class="avatar initials"><abbr>KU</abbr><span class="bad">.</span></li>
+                       </ul>
+                     </div>
+                     <div class="meta">
+                        <span class="time-past">1hr ago</span>
+                     </div>
+                    </div>
+                  </li>
+
+                  
+
+                </ul>
+                <!-- End of user listing -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- build:js /scripts/app.js -->
-    <script src="/scripts/app.js"></script>
+    <script src="scripts/jquery-1.9.1.min.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+    <script src="scripts/app.js"></script>
     <!-- endbuild -->
   </body>
 </html>

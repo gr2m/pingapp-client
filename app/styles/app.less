@@ -7,11 +7,82 @@
  */
 
 
-/* ==========================================================================
-   Site Design
+/* 
+   Front-End Design
    ========================================================================== */
 
 
 body {
   background: #FFF;
+  font-family: 'Open Sans', sans-serif;
 }
+
+/** Header **/
+
+header{
+	padding: 20px 0 0 0;
+	background: #F7F8FE;
+	
+	/** App Logo **/
+	.logo{
+		max-width: 150px;
+		img{
+			width: 100%;
+		}
+		margin-bottom: 10px;
+	}
+	/** Navigation **/
+	.nav{
+		
+		li{
+			i{
+				margin-right: 10px;
+				font-size: 16px;
+			}
+
+			a{
+				color: #0F2730;
+				&:hover{
+					background: transparent;
+				}
+			}
+		}
+	}
+	.header-title{
+		background: url(../images/lines.png) repeat;
+		background-color: #160D3A;
+		padding: 20px;
+		color:#fefefe;
+		
+		ul{
+
+			.btn{
+				a{
+					display: block;
+					color: #fefefe;
+					border:1px solid #fefefe;
+					padding: 10px 20px;
+					line-height: 20px;
+					transition-property: all;
+				  	transition-duration: 0.5s;
+				  	transition-timing-function: cubic-bezier;
+					
+					&:hover{
+						color:#2DADE3;
+						text-decoration: none;
+						background: #141414;
+						border-color: #000;
+					}
+					i{
+						margin-right: 10px;
+						font-size: 20px;
+					}
+				}
+			}
+		}
+	}
+}
+
+/** Module **/
+
+
