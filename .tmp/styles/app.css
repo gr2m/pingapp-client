@@ -5,9 +5,63 @@
  * @Authors:
  * @Created:
  */
-/* ==========================================================================
-   Site Design
+/* 
+   Front-End Design
    ========================================================================== */
 body {
   background: #FFF;
+  font-family: 'Open Sans', sans-serif;
 }
+/** Header **/
+header {
+  padding: 20px 0 0 0;
+  background: #F7F8FE;
+  /** App Logo **/
+
+  /** Navigation **/
+
+}
+header .logo {
+  max-width: 150px;
+  margin-bottom: 10px;
+}
+header .logo img {
+  width: 100%;
+}
+header .nav li i {
+  margin-right: 10px;
+  font-size: 16px;
+}
+header .nav li a {
+  color: #0F2730;
+}
+header .nav li a:hover {
+  background: transparent;
+}
+header .header-title {
+  background: url(../images/lines.png) repeat;
+  background-color: #160D3A;
+  padding: 20px;
+  color: #fefefe;
+}
+header .header-title ul .btn a {
+  display: block;
+  color: #fefefe;
+  border: 1px solid #fefefe;
+  padding: 10px 20px;
+  line-height: 20px;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier;
+}
+header .header-title ul .btn a:hover {
+  color: #2DADE3;
+  text-decoration: none;
+  background: #141414;
+  border-color: #000;
+}
+header .header-title ul .btn a i {
+  margin-right: 10px;
+  font-size: 20px;
+}
+/** Module **/

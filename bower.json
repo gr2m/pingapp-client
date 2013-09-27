@@ -1,0 +1,9 @@
+{
+  "name": "pingapp-client",
+  "version": "0.1.0",
+  "dependencies": {
+    "jquery": "~2.0",
+    "bootstrap": "~3.0",
+    "modernizr": "~2.6"
+  }
+}
