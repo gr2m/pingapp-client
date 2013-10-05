@@ -106,6 +106,14 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+/** Mixins **/
+
+.drop-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+	-webkit-box-shadow:	@x @y @blur @spread rgba(0, 0, 0, @alpha);
+	-moz-box-shadow:	@x @y @blur @spread rgba(0, 0, 0, @alpha);
+	box-shadow:		@x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+
 /** Header **/
 
 header{
@@ -172,6 +180,56 @@ header{
 	}
 }
 
-/** Module **/
+/** Dashboard Module **/
+
+.dashboard {
+	th {
+		background:#eee;
+	}
+	td, th {
+		border:1px solid #dedede;
+		vertical-align:top;
+		padding:5px;
+		
+		i {padding-right:5px; display:inline-block;}
+	}
+	.recipient-details {
+		display:none;
+	}
+	.reply {color:green;}
+	.recipients-list {
+		position:relative;
+		
+		&:hover {
+			color:#eee;
+			.reply {color:#eee;}
+			
+			.recipient-details {
+				display:block;
+				position:absolute;
+				top:0;
+				left:0;
+				z-index:100;
+				//drop-shadow {1px 1px 1px}
+				border:1px solid #dedede;
+				background:#fff;
+				padding:10px;
+				color:#333;
+				.reply {color:green;}
+				
+				ul {
+					list-style:none;
+					padding:0;
+					margin:0;
+				}
+			}
+		}
+	}
+	
+	
+
+}
+
+
 
 

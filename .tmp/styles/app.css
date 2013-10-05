@@ -8620,6 +8620,7 @@ body {
   background: #FFF;
   font-family: 'Open Sans', sans-serif;
 }
+/** Mixins **/
 /** Header **/
 header {
   padding: 20px 0 0 0;
@@ -8672,4 +8673,52 @@ header .header-title ul .btn a i {
   margin-right: 10px;
   font-size: 20px;
 }
-/** Module **/
+/** Dashboard Module **/
+.dashboard th {
+  background: #eee;
+}
+.dashboard td,
+.dashboard th {
+  border: 1px solid #dedede;
+  vertical-align: top;
+  padding: 5px;
+}
+.dashboard td i,
+.dashboard th i {
+  padding-right: 5px;
+  display: inline-block;
+}
+.dashboard .recipient-details {
+  display: none;
+}
+.dashboard .reply {
+  color: green;
+}
+.dashboard .recipients-list {
+  position: relative;
+}
+.dashboard .recipients-list:hover {
+  color: #eee;
+}
+.dashboard .recipients-list:hover .reply {
+  color: #eee;
+}
+.dashboard .recipients-list:hover .recipient-details {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  border: 1px solid #dedede;
+  background: #fff;
+  padding: 10px;
+  color: #333;
+}
+.dashboard .recipients-list:hover .recipient-details .reply {
+  color: green;
+}
+.dashboard .recipients-list:hover .recipient-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

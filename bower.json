@@ -6,6 +6,8 @@
     "bootstrap": "~3.0",
     "modernizr": "~2.6",
     "font-awesome": "~3.2",
-    "icanhazjs": "~0.10.3"
+    "handlebars": "~1.0.0",
+    "crossroads.js": "~0.12.0",
+    "hasher": "~1.1.3"
   }
 }

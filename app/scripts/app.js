@@ -12,80 +12,93 @@ function init() {
   $header = $app.find('> header');
   $main = $app.find('.main');
 
-  $header.html( ich.header() );
+  $header.html( JST['header']({currentUserEmail: 'joe@example.com'}) );
 
-  if ( api.account.isSignedIn() ) {
-    showDashboard()
-  } else {
+  if ( ! api.account.isSignedIn() ) {
     showLogin()
   }
 
   subscribeToEvents()
+  setupRouting({onNavigate: navigate})
+}
+
+function navigate(newHash, oldHash){
+  crossroads.parse(newHash);
+
+  $('html').attr('data-mode', 'app')
+  switch(newHash) {
+    case '': return goToDashboard();
+    case 'dashboard': return showDashboard();
+    case 'newMessage': return showNewMessage();
+    case 'login': return showLogin();
+    case 'logout': return signOut();
+  }
+}
+
+function goToDashboard () {
+  hasher.setHash('dashboard');
 }
 
 function subscribeToEvents () {
   var $body = $(document.body);
 
-  $body.on('submit', '.login form', handleLoginSubmit)
-  $body.on('click', '.signOut', handleSignOutClick)
+  $body.on('submit', handleSubmit)
+  $body.on('click', 'a[href^="/"]', handleNavigationClick)
+}
+
+function handleSubmit (event) {
+  event.preventDefault();
+  var $form = $(event.target);
+  switch(event.target.action) {
+    case 'login': return handleLoginSubmit($form);
+    case 'sendMessage': return handleNewMessageSubmit($form);
+  }
+}
+function handleNavigationClick (event) {
+  event.preventDefault()
+  var path = $(event.target).attr('href').substr(1);
+  hasher.setHash(path);
 }
 
 function showLogin () {
   $('html').attr('data-mode', 'login')
 }
 function showDashboard () {
-  $main.html( ich.dashboard({
+  $main.html( JST['dashboard']({
     currentUser: {
       name: api.account.name(),
       email: api.account.email()
     }
   }) );
-  var $userListing = $main.find('.user-listing');
 
-  var listings = [];
-  listings.push({
-    type: 'user',
-    name: 'Udeze Kene',
-    status: {
-      type: 'twitter',
-      text: 'Packing my bags for the Nairobi trip...'
-    },
-    timeAgo: '1hr'
-  })
-  listings.push({
-    type: 'group',
-    datetime: '25-02-2013',
-    timeAgo: '1hr'
-  })
-  listings.push({
-    type: 'group',
-    datetime: '25-02-2013',
-    timeAgo: '1hr'
-  })
-  listings.push({
-    type: 'user',
-    name: 'Udeze Kene',
-    status: {
-      type: 'twitter',
-      text: 'Packing my bags for the Nairobi trip...'
-    },
-    timeAgo: '1hr'
-  })
-
-  var listingHtml = listings.map(function(listing) {
-    if (listing.type == 'user') {
-      return ich.dashboardListingUser(listing)
-    }
-
-    return ich.dashboardListingGroup(listing)
-  })
-  $userListing.html(listingHtml )
-  $('html').attr('data-mode', 'app')
+  api.broadcasts.findAll().then( function(broadcasts) {
+  	$main.html( JST['dashboard']({
+		currentUser: {
+		  name: api.account.name(),
+		  email: api.account.email()
+		},
+		broadcasts: broadcasts
+	  })
+	  );
+  } )
 }
 
-function handleLoginSubmit (event) {
-  event.preventDefault();
-  $form = $(event.target);
+function handleNewMessageSubmit ($form) {
+  var contacts = $form.find('[name=contacts]').val()
+  var text = $form.find('[name=text]').val()
+
+  // make array out of string
+  contacts = contacts.split(/\s*[,;]\s*/)
+
+  // check if all contacts are known
+  api.broadcasts.add({
+    contact_ids: [123, 456],
+    text: 'you ok?'
+  })
+  .then( handleNewMessageSuccess )
+  .fail( showError )
+}
+function handleLoginSubmit ($form) {
   var email = $form.find('[name=email]').val();
   var password = $form.find('[name=password]').val();
   api.account.signIn(email, password)
@@ -102,15 +115,20 @@ function showError (error) {
   alert(error)
 }
 
-function handleSignOutClick ( event ) {
-  event.preventDefault();
+function signOut ( ) {
   api.account.signOut()
   .then( handleSignOut )
   .fail( showError )
 }
 
 function handleSignOut () {
-  showLogin()
+  hasher.setHash('login');
+}
+
+function showNewMessage () {
+  $main.html( JST['sendMessage']({
+
+  }) );
 }
 
 // init on DOM loaded

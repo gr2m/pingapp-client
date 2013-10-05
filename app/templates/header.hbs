@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <div class="logo">
+      <a href="#"><img src="images/logo.png" alt=""></a>
+    </div>
+  </div>
+  <div class="navbar-collapse collapse">
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href=""><i class="icon-home"></i>Home</a></li>
+      <li><a href=""><i class="icon-user"></i>Contacts</a></li>
+      <li><a href=""><i class="icon-envelope"></i>Messages</a></li>
+      <li><a href=""><i class="icon-cog"></i>Settings</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ currentUserEmail }} <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Edit Profile</a></li>
+          <li class="signOut"><a href="/logout">Sign Out</a></li>
+        </ul>
+      </li>
+
+    </ul>
+  </div><!--/.nav-collapse -->
+</div>
+<!-- End of Container -->
+<div class="header-title">
+  <div class="container">
+    <div class="row">
+
+      <h2>Dashboard</h2>
+      <nav class="pull-right">
+        <ul>
+          <li class="btn sendMessage"><a href="/newMessage"><i class="icon-envelope"></i>Send a message</a></li>
+          <li class="btn"><a href="#"><i class="icon-plus-sign"></i>Add a contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <!-- End of container -->
+</div>

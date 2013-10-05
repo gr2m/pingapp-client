@@ -51,6 +51,13 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/images/**/*.{png,jpg,jpeg,webp}'
         ],
         tasks: ['livereload']
+      },
+
+      handlebars: {
+        files: [
+          '<%= yeoman.app %>/templates/**/*.hbs'
+        ],
+        tasks: ['handlebars']
       }
     },
 
@@ -174,6 +181,21 @@ module.exports = function (grunt) {
         }
       }
     },
+
+    //
+    handlebars: {
+      compile: {
+        options: {
+          namespace: "JST",
+          processName: function(path) {
+            return path.replace(/(^app\/templates\/|\.hbs$)/g, '');
+          }
+        },
+        files: {
+          "<%= yeoman.tmp %>/templates.js": "<%= yeoman.app %>/templates/**/*.hbs"
+        }
+      }
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-less');
@@ -187,6 +209,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'less',
+      'handlebars',
       'livereload-start',
       'connect:livereload',
       'open',
@@ -210,4 +233,6 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  grunt.loadNpmTasks('grunt-contrib-handlebars');
 };

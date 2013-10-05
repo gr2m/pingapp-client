@@ -1,0 +1,47 @@
+<div class="col-lg-8 col-lg-offset-2">
+  <div class="module dashboard">
+    <div class="title">
+      <h3>Title of the module?!</h3>
+    </div>
+    <div class="content">
+		<table>
+			<tr>
+				<th class="date">Date</th>
+				<th class="message">Message</th>
+				<th class="recipients">Recipients</th>
+				<th class="status">Status</th>
+			</tr>
+    	{{#each broadcasts}}
+
+				<tr>
+					<td><time datetime="25-02-2013">{{created_at}}</time></td>
+					<td>{{message}}</td>
+					<td>
+						<div class="recipients-list">
+						 {{#each contacts}}
+							<span class="reply">{{name}}</span>
+							<i class="icon-chevron-down"></i>
+						 {{/each}}
+							<div class="recipient-details">
+								<ul>
+								{{#each contacts}}
+									<li><i class="reply icon-mail-reply"> {{name}}</i></li>
+								{{/each}}
+								</ul>
+							</div>
+						</div>
+						
+					</td>
+					<td><i class="icon-mail-reply"></i>2 of 3 replies</td>
+				</tr>
+
+			
+    	{{else}}
+    		loading ...
+    	{{/each}}
+	</table>
+      <ul class="user-listing">
+      </ul><!-- /.user-listing -->
+    </div>
+  </div>
+</div>

@@ -26,7 +26,7 @@
     </div>
 
     <div class="login">
-      <form class="jumbotron">
+      <form action="login" class="jumbotron">
         <h1>Login</h1>
         <p>
           <label>Email</label>
@@ -41,111 +41,6 @@
         </p>
       </form>
     </div>
-
-
-    <!-- TEMPLATES -->
-    <script id="header" type="text/html">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <div class="logo">
-            <a href="#"><img src="images/logo.png" alt=""></a>
-          </div>
-        </div>
-        <div class="navbar-collapse collapse">
-
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href=""><i class="icon-home"></i>Home</a></li>
-            <li><a href=""><i class="icon-user"></i>Contacts</a></li>
-            <li><a href=""><i class="icon-envelope"></i>Messages</a></li>
-            <li><a href=""><i class="icon-cog"></i>Settings</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">x{{ currentUser.email }} <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Edit Profile</a></li>
-                <li class="signOut"><a href="#">Sign Out</a></li>
-              </ul>
-            </li>
-
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-      <!-- End of Container -->
-      <div class="header-title">
-        <div class="container">
-          <div class="row">
-
-            <h2>Dashboard</h2>
-            <nav class="pull-right">
-              <ul>
-                <li class="btn"><a href="#"><i class="icon-envelope"></i>Send a message</a></li>
-                <li class="btn"><a href="#"><i class="icon-plus-sign"></i>Add a contact</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-        <!-- End of container -->
-      </div>
-    </script>
-
-    <script id="dashboard" type="text/html">
-      <div class="col-lg-8 col-lg-offset-2">
-        <div class="module">
-          <div class="title">
-            <h3>Title of the module</h3>
-          </div>
-          <div class="content">
-            <ul class="user-listing">
-            </ul><!-- /.user-listing -->
-          </div>
-        </div>
-      </div>
-    </script>
-
-    <script id="dashboardListingUser" type="text/html">
-      <li class="{{ type }}">
-        <div>
-         <h4><a href="#">{{ name }}</a></h4>
-         <div class="last-update">
-           <p><span class="source"><i class="icon-{{ status.type }}"></i></span> {{ status.text }}</p>
-         </div>
-         <div class="status">
-           <ul>
-             <li class="response good"><i class="icon-circle"></i></li>
-             <li class="verified"><a href=""><i class="icon-thumbs-up"></i></a></li>
-           </ul>
-         </div>
-         <div class="meta">
-            <span class="time-past">{{ timeAgo }}</span>
-         </div>
-        </div>
-      </li>
-    </script>
-
-    <script id="dashboardListingGroup" type="text/html">
-      <li class="{{ type }} ">
-        <div>
-         <h4><a href="">{{ datetime }} </a></h4>
-         <div class="photo-pile">
-           <ul>
-             <li class="avatar image"><img src="http://dummyimage.com/50x50/000/fff" alt=""><span class="good">.</span></li>
-             <li class="avatar initials"><abbr>KU</abbr><span class="good">.</span></li>
-             <li class="avatar initials"><abbr>KU</abbr><span class="bad">.</span></li>
-             <li class="avatar initials"><abbr>KU</abbr><span class="bad">.</span></li>
-             <li class="avatar initials"><abbr>KU</abbr><span class="none">.</span></li>
-             <li class="avatar initials"><abbr>KU</abbr><span class="bad">.</span></li>
-           </ul>
-         </div>
-         <div class="meta">
-            <span class="time-past">1hr ago</span>
-         </div>
-        </div>
-      </li>
-    </script>
 
     <!-- build:js /scripts/vendor.js -->
     <script src="/components/jquery/jquery.js"></script>
@@ -162,12 +57,17 @@
     <script src="/components/bootstrap/js/tab.js"></script>
     <script src="/components/bootstrap/js/affix.js"></script>
     <script src="/components/modernizr/modernizr.js"></script>
-    <script src="/components/icanhazjs/ICanHaz.js"></script>
+    <script src="/components/handlebars/handlebars.runtime.js"></script>
+    <script src="/components/crossroads.js/dev/lib/signals.js"></script>
+    <script src="/components/crossroads.js/dist/crossroads.js"></script>
+    <script src="/components/hasher/dist/js/hasher.js"></script>
 
     <script src="/scripts/ping.api.js"></script>
     <!-- endbuild -->
 
     <!-- build:js /scripts/app.js -->
+    <script src="/templates.js"></script>
+    <script src="/scripts/routes.js"></script>
     <script src="/scripts/app.js"></script>
     <!-- endbuild -->
   </body>
