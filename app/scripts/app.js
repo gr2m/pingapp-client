@@ -49,7 +49,8 @@ function subscribeToEvents () {
 function handleSubmit (event) {
   event.preventDefault();
   var $form = $(event.target);
-  switch(event.target.action) {
+  var action = $form.attr('action')
+  switch(action) {
     case 'login': return handleLoginSubmit($form);
     case 'sendMessage': return handleNewMessageSubmit($form);
   }
@@ -97,6 +98,10 @@ function handleNewMessageSubmit ($form) {
   })
   .then( handleNewMessageSuccess )
   .fail( showError )
+}
+function handleNewMessageSuccess (event) {
+  alert('message sent')
+  hasher.setHash('dashboard');
 }
 function handleLoginSubmit ($form) {
   var email = $form.find('[name=email]').val();

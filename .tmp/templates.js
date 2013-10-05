@@ -22,7 +22,7 @@ function program1(depth0,data) {
   buffer += "\n							<div class=\"recipient-details\">\n								<ul>\n								";
   stack1 = helpers.each.call(depth0, depth0.contacts, {hash:{},inverse:self.noop,fn:self.program(4, program4, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n								</ul>\n							</div>\n						</div>\n						\n					</td>\n					<td><i class=\"icon-mail-reply\"></i>2 of 3 replies</td>\n				</tr>\n\n			\n    	";
+  buffer += "\n								</ul>\n							</div>\n						</div>\n\n					</td>\n					<td><i class=\"icon-mail-reply\"></i>2 of 3 replies</td>\n				</tr>\n\n\n    	";
   return buffer;
   }
 function program2(depth0,data) {
@@ -50,10 +50,10 @@ function program4(depth0,data) {
 function program6(depth0,data) {
   
   
-  return "\n    		loading ...\n    	";
+  return "\n    		<tr>\n        <td colspan=\"99\">loading ...</td>\n        </tr>\n    	";
   }
 
-  buffer += "<div class=\"col-lg-8 col-lg-offset-2\">\n  <div class=\"module dashboard\">\n    <div class=\"title\">\n      <h3>Title of the module?!</h3>\n    </div>\n    <div class=\"content\">\n		<table>\n			<tr>\n				<th class=\"date\">Date</th>\n				<th class=\"message\">Message</th>\n				<th class=\"recipients\">Recipients</th>\n				<th class=\"status\">Status</th>\n			</tr>\n    	";
+  buffer += "<div class=\"col-lg-8 col-lg-offset-2\">\n  <div class=\"module dashboard\">\n    <div class=\"title\">\n      <h3>Broadcasts</h3>\n    </div>\n    <div class=\"content\">\n		<table>\n			<tr>\n				<th class=\"date\">Date</th>\n				<th class=\"message\">Message</th>\n				<th class=\"recipients\">Recipients</th>\n				<th class=\"status\">Status</th>\n			</tr>\n    	";
   stack1 = helpers.each.call(depth0, depth0.broadcasts, {hash:{},inverse:self.program(6, program6, data),fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n	</table>\n      <ul class=\"user-listing\">\n      </ul><!-- /.user-listing -->\n    </div>\n  </div>\n</div>";
